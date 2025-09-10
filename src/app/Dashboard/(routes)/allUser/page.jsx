@@ -37,7 +37,7 @@ const AllUser = () => {
   } = useQuery({
     queryKey: ["allUsers"],
     queryFn: async () => {
-      const { data } = await axios(`http://localhost:3000/allUsers`);
+      const { data } = await axios(`http://localhost:5000/allUsers`);
       return data;
     },
     enabled: role === 'admin', // Only fetch if the role is 'admin'
@@ -59,7 +59,7 @@ if (roleError || userRoleError) return <div>Error loading data</div>;
     try {
       console.log(email);
 
-      const response = await axios.delete(`http://localhost:3000/deleteUser?email=${email}`);
+      const response = await axios.delete(`http://localhost:5000/deleteUser?email=${email}`);
       if (response.data) {
         toast.success("Deleted successfully");
         refetch();
@@ -71,7 +71,7 @@ if (roleError || userRoleError) return <div>Error loading data</div>;
 
   const handleRoleChange = async (email, newRole) => {
     try {
-      const response = await axios.patch(`http://localhost:3000/updateUserRole`, {
+      const response = await axios.patch(`http://localhost:5000/updateUserRole`, {
         email,
         role: newRole,
       });

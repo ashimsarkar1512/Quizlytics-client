@@ -4,7 +4,7 @@ import axios from 'axios';
 export const getMCQ = async (category, level) => {
     console.log(category, level);
     try {
-        const res = await axios.get(`http://localhost:3000/quiz?category=${category}&skill=${level}`);
+        const res = await axios.get(`http://localhost:5000/quiz?category=${category}&skill=${level}`);
         return res.data;
     } catch (error) {   
         console.error("Error fetching MCQ:", error);
@@ -15,7 +15,7 @@ export const getMCQ = async (category, level) => {
 export const getQuizByLink = async (artLink) => {
     
     try {
-        const res = await axios.get(`http://localhost:3000/testByLink?link=${artLink}`);
+        const res = await axios.get(`http://localhost:5000/testByLink?link=${artLink}`);
         return res.data;
     } catch (error) {   
         console.error("Error fetching MCQ:", error);
@@ -25,7 +25,7 @@ export const getQuizByLink = async (artLink) => {
 
 export const getMark = async(examId) => {
     try {
-        const res = await axios.get(`https://quizlytics-server-gamma.vercel.app/my_mark/${examId}`);
+        const res = await axios.get(`http://localhost:5000/my_mark/${examId}`);
         return res.data;
     } catch (error) {
         console.error("Error fetching MCQ:", error);
@@ -35,7 +35,7 @@ export const getMark = async(examId) => {
 
 export const getCustomQuiz = async(quizKey) =>{
     try{
-        const res = await axios.get(`http://localhost:3000/getCustomQuizByKey?qKey=${quizKey}`)
+        const res = await axios.get(`http://localhost:5000/getCustomQuizByKey?qKey=${quizKey}`)
         return res.data;
     } catch(error){
         console.error("Error fetching Custom Quiz:", error);
@@ -46,7 +46,7 @@ export const getCustomQuiz = async(quizKey) =>{
 
 export const allCustomQuiz = async() =>{
     try{
-        const res = await axios.get(`http://localhost:3000/allCustomQuiz`)
+        const res = await axios.get(`http://localhost:5000/allCustomQuiz`)
         return res.data;
     } catch(error){
         console.error("Error fetching All Custom Quiz:", error);
@@ -56,7 +56,7 @@ export const allCustomQuiz = async() =>{
 
 export const getSubmissionByKey = async (key, email)=>{
     try{
-        const res = await axios.get(`http://localhost:3000/historyByKey?qKey=${key}&email=${email}`)
+        const res = await axios.get(`http://localhost:5000/historyByKey?qKey=${key}&email=${email}`)
         return res.data;
     } catch(error){
         console.error("Error fetching submissions by key:", error)
@@ -65,7 +65,7 @@ export const getSubmissionByKey = async (key, email)=>{
 }
 export const getSubmissionByQuizTitle = async (searchCategory, email)=>{
     try{
-        const res = await axios.get(`http://localhost:3000/historyByUserAi?qTitle=${searchCategory}&email=${email}`)
+        const res = await axios.get(`http://localhost:5000/historyByUserAi?qTitle=${searchCategory}&email=${email}`)
         return res.data;
     } catch(error){
         console.error("Error fetching submissions by key:", error)
@@ -76,7 +76,7 @@ export const getSubmissionByQuizTitle = async (searchCategory, email)=>{
 
 export const getLinkHistoryByUser = async(email)=>{
     try{
-        const res = await axios.get(`http://localhost:3000/linkHistoryByUser?email=${email}`)
+        const res = await axios.get(`http://localhost:5000/linkHistoryByUser?email=${email}`)
         return res.data
     }
     catch(error){
@@ -87,7 +87,7 @@ export const getLinkHistoryByUser = async(email)=>{
 
 // export const getLeaders = async()=>{
 //     try{
-//         const res = await axios.get(`http://localhost:3000/leaderboard`)
+//         const res = await axios.get(`http://localhost:5000/leaderboard`)
 //         return res.data;
 //     } catch(error){
 //         console.log("Error fetching leaderboard:", error);
@@ -96,7 +96,7 @@ export const getLinkHistoryByUser = async(email)=>{
 // }
 export const getExaminees = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/allExaminee");
+      const res = await axios.get("http://localhost:5000/allExaminee");
       return res.data; 
     } catch (error) {
       console.error("Error fetching allExaminee:", error);
@@ -105,7 +105,7 @@ export const getExaminees = async () => {
   };
 export const getMarks = async(email)=>{
     try{
-        const res = await axios.get(`http://localhost:3000/userHistory?email=${email}`)
+        const res = await axios.get(`http://localhost:5000/userHistory?email=${email}`)
         return res.data;
     } catch(error){
         console.log("Error fetching leaderboard:", error);
@@ -114,7 +114,7 @@ export const getMarks = async(email)=>{
 }
 export const getSubmissionById = async(id)=>{
     try{
-        const res = await axios.get(`http://localhost:3000/userHistory/${id}`)
+        const res = await axios.get(`http://localhost:5000/userHistory/${id}`)
         return res.data;
     } catch(error){
         console.log("Error fetching History:", error);

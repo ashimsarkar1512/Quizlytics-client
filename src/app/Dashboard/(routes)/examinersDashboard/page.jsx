@@ -67,7 +67,7 @@ const Page = () => {
       if (result.isConfirmed) {
         axios
           .delete(
-            `http://localhost:3000/deleteCustomQuiz?qKey=${id}`
+            `http://localhost:5000/deleteCustomQuiz?qKey=${id}`
           )
           .then(() => {
             refetch();

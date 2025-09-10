@@ -48,7 +48,7 @@ const Overview = () => {
   const fetchExaminees = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:3000/allExaminee"
+        "http://localhost:5000/allExaminee"
       );
       const data = res.data;
 

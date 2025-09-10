@@ -134,7 +134,7 @@ const Page = () => {
     try {
       // Replace with your backend API endpoint
       const response = await axios.post(
-        "http://localhost:3000/saveManualQuiz",
+        "http://localhost:5000/saveManualQuiz",
         quizSet
       );
       Swal.fire({

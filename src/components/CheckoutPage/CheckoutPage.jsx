@@ -52,7 +52,7 @@ const CheckoutPage = ({ prices }) => {
 
       try {
         const response = await axios.post(
-          "http://localhost:3000/paymentHistory",
+          "http://localhost:5000/paymentHistory",
           paymentInfo,
           {
             headers: {

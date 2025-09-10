@@ -72,11 +72,11 @@ const QuizResult = ({
 
   let postUrl = "";
   if (quizStartKey) {
-    postUrl = "http://localhost:3000/saveHistory";
+    postUrl = "http://localhost:5000/saveHistory";
   } else if (searchCategory) {
-    postUrl = "http://localhost:3000/saveAiQuiz";
+    postUrl = "http://localhost:5000/saveAiQuiz";
   } else {
-    postUrl = "http://localhost:3000/linkQuiz";
+    postUrl = "http://localhost:5000/linkQuiz";
   }
 
   const handleSaveRecord = async () => {

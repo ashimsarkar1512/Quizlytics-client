@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const postNewUser = async (newUser) => {
   try {
-    const response = await axios.post('http://localhost:3000/registered_users', newUser);
+    const response = await axios.post('http://localhost:5000/registered_users', newUser);
     return response;
   } catch (error) {
     console.error("Error posting new user:", error);
@@ -12,7 +12,7 @@ export const postNewUser = async (newUser) => {
 
 export const postUserWithProvider = async (newUser) => {
   try {
-    const response = await axios.post('http://localhost:3000/authenticating_with_providers', newUser);
+    const response = await axios.post('http://localhost:5000/authenticating_with_providers', newUser);
     return response;
   } catch (error) {
     console.error("Error posting user with provider:", error);
@@ -22,7 +22,7 @@ export const postUserWithProvider = async (newUser) => {
 
 export const postUserExamData = async (userExamData) => {
   try {
-    const response = await axios.post("https://quizlytics-server-gamma.vercel.app/user_exam_data", userExamData);
+    const response = await axios.post("http://localhost:5000/user_exam_data", userExamData);
     return response;
   } catch (error) {
     console.error("Error posting user exam data:", error);
@@ -32,7 +32,7 @@ export const postUserExamData = async (userExamData) => {
 
 export const postOnlyMark = async (userMark) => {
   try {
-    const response = await axios.post("https://quizlytics-server-gamma.vercel.app/only_user_mark", userMark);
+    const response = await axios.post("http://localhost:5000/only_user_mark", userMark);
     return response;
   } catch (error) {
     console.error("Error posting only mark:", error);

@@ -18,7 +18,7 @@ export default function Post({ params }) {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/blog/${id}`);
+        const response = await axios.get(`http://localhost:5000/blog/${id}`);
         setPost(response.data);
       } catch (err) {
         setError('Failed to load post');
@@ -29,7 +29,7 @@ export default function Post({ params }) {
 
     const fetchOtherPosts = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/allBlogs');
+        const response = await axios.get('http://localhost:5000/allBlogs');
         // Filter out the current post by ID and limit to 3 posts
         const otherPosts = response.data.filter((post) => post._id !== id).slice(0, 3);
         setOtherPosts(otherPosts);

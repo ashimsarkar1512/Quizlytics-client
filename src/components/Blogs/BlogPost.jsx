@@ -17,7 +17,7 @@ export default function BlogPost() {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/allBlogs"
+          "http://localhost:5000/allBlogs"
         );
         setPosts(response.data);
         console.log("Fetched posts:", response.data); // Debug fetched data

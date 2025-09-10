@@ -6,7 +6,7 @@ const useAllQuiz = () => {
     queryKey: ["customQuiz"],
     queryFn: async () => {
       const res = await axios.get(
-        "http://localhost:3000/allCustomQuiz"
+        "http://localhost:5000/allCustomQuiz"
       );
       return res.data;
     },
