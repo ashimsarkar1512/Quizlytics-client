@@ -42,7 +42,6 @@ yarn-error.log*
 next-env.d.ts
 
 # editor
-.vscode/*
 !.vscode/extensions.json
 branch_structure.json
 temp_auto_push.bat
